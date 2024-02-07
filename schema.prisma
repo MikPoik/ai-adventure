@@ -1,12 +1,13 @@
 generator client {
   provider        = "prisma-client-js"
   previewFeatures = ["fullTextSearch"]
+  engineType = "binary"
 }
 
 datasource db {
   provider  = "postgresql"
-  url       = env("POSTGRES_PRISMA_URL") // uses connection pooling
-  directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
+  url       = env("DATABASE_URL") // uses connection pooling
+  directUrl = env("DATABASE_URL") // uses a direct connection
 }
 
 model Adventure {
@@ -152,7 +153,7 @@ model UserEnergy {
 model UserApprovals {
   id         Int     @id @default(autoincrement())
   userId     String  @unique
-  isApproved Boolean @default(false)
+  isApproved Boolean @default(true)
 }
 
 model Subscriptions {

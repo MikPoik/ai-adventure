@@ -111,7 +111,7 @@ export const TextBlock = ({
             onMouseEnter={() => setIsHover(true)}
             onMouseLeave={() => setIsHover(false)}
           >
-            <NarrationPlayer blockId={blockId} />
+              {/* <NarrationPlayer blockId={blockId} />*/}
           </div>
           <div className="w-full px-2">
             <div className="border-t border-foreground/20 w-full px-2" />

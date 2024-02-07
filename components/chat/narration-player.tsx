@@ -14,12 +14,15 @@ export function NarrationPlayer({ blockId }: { blockId: string }) {
   const { data: url } = useQuery({
     queryKey: ["narration", blockId],
     queryFn: async () => {
+        return "";
+        /*
       const resp = await fetch(`/api/game/${params.handle}/narrate`, {
         method: "POST",
         body: JSON.stringify({ block_id: blockId }),
       });
       const data = await resp.json();
       return data.url || "";
+      */
     },
     refetchOnWindowFocus: false,
     enabled: audioRequested,
